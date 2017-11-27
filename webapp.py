@@ -22,7 +22,13 @@ def render_usprts2():
     
 @app.route("/export")
 def render_third():
-    return render_template('exports.html')
+    return render_template('exports.html', year = get_year_options())
+
+@app.route("/UsExprt2")
+def render_usprts3():
+        us_exp = request.args["year"]
+        print(us_exp)
+        return render_template('exports.html', year = get_year_options(us_exp))
     
 @app.route("/consume")
 def render_four():
