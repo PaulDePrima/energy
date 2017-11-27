@@ -3,7 +3,15 @@
 {% block title %}Fact Page 1{% endblock %}
 {% block content %}
   <h3>Fun Facts on Energy Imports</h3>
-<h7>Choose energy source and see the percent of it that was imported</h7>
-  <p></p>
+  <h7>Choose energy source and see the percent of it that was imported</h7>
+   <form action="/UsImprt2">
+    <select name="year">
+      {{ year }}
+    </select>
+   <br><br>
+   <input type="submit">
+   <br><br>
+   <p>{{ response }}</p>
+ </form>
   
 {% endblock %}
