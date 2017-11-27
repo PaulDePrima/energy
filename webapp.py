@@ -1,7 +1,10 @@
 from flask import Flask, url_for, render_template, request, Markup, flash
-import os, json
+import os, json, random
 
 app = Flask(__name__)
+
+with open('energy.json') as energy_data:
+    energy = json.load(energy_data)
 
 @app.route("/")
 def render_main():
