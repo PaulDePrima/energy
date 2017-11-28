@@ -34,7 +34,7 @@ def render_usprts3():
 def render_four():
     return render_template('consume.html', year = get_year_options())
 
-@app.rout("/UsConsume2")
+@app.route("/UsConsume2")
 def render_usprts4():
         us_con = request.args["year"]
         print(us_con)
