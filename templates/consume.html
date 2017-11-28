@@ -3,6 +3,14 @@
 {% block title %}Fact Page 3{% endblock %}
 {% block content %}
   <h3>Fun Facts on Energy Consumtion</h3>
-  <p></p>
+   <form action="/UsConsume2">
+    <select name="year">
+      {{ year }}
+    </select>
+   <br><br>
+   <input type="submit">
+   <br><br>
+   <p>{{ response }}</p>
+ </form>
   
 {% endblock %}
