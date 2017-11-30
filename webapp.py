@@ -14,9 +14,9 @@ def render_main():
 def render_usprts2():
 	try:   
 	    us_imp = request.args["year"]
-	    return render_template('importEnergy.html', year = get_year_options(us_imp), response = us_importEngery(us_imp))
+	    return render_template('facts.html', year = get_year_options(us_imp), response = us_importEngery(us_imp))
 	except:
-		return render_template('importEnergy.html', year = get_year_options())
+		return render_template('facts.html', year = get_year_options())
 
 #@app.route("/UsImprt2")
 #def render_usprts2():
