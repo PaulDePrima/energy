@@ -55,10 +55,11 @@ def get_year_options(default = None):
     return options
 
 def us_importEngery(year):
-       imprts = energy[1949-year]["imports"]
+       imprts = energy[1949-int(year)]["data"]["imports"]
        randKey = random.choice(list(imprts.keys()))
 
-       return randKey + ": " + imprts[randKey] + " Quadrillion BTUs"
+       return randKey + ": " + str(imprts[randKey]) + " Quadrillion BTUs"
+
     
     
 
