@@ -31,13 +31,12 @@ def render_third():
     
 @app.route("/consume")
 def render_four():
-    return render_template('consume.html', year = get_year_options())
+    try:   
+	    us_cons = request.args["year"]
+	    return render_template('consume.html', year = get_year_options(us_cons), response = us_importEngery(us_cons))
+	except:
+		return render_template('consume.html', year = get_year_options())
 
-@app.route("/UsConsume2")
-def render_usprts4():
-        us_con = request.args["year"]
-        print(us_con)
-        return render_template('consume.html', year = get_year_options(us_con))
 
 def get_year_options(default = None):
     options = ""
