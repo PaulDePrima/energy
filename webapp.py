@@ -33,7 +33,7 @@ def render_third():
 def render_four():
 	try:  
 	     	us_cons = request.args["year"]
-	     	return render_template('consume.html', year = get_year_options(us_cons), response = us_importEngery(us_cons))
+	     	return render_template('consume.html', year = get_year_options(us_cons), response = us_consumeEngery(us_cons))
 	except:
 		return render_template('consume.html', year = get_year_options())
 
@@ -60,6 +60,12 @@ def us_importEngery(year):
 
 def us_exportEngery(year):
        imprts = energy[1949-int(year)]["data"]["exports"]
+       randKey = random.choice(list(imprts.keys()))
+
+       return randKey + ": " + str(imprts[randKey]) + " Quadrillion BTUs"
+
+def us_consumeEngery(year):
+       imprts = energy[1949-int(year)]["data"]["consumption"]
        randKey = random.choice(list(imprts.keys()))
 
        return randKey + ": " + str(imprts[randKey]) + " Quadrillion BTUs"
