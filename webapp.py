@@ -23,8 +23,8 @@ return render_template('importEnergy.html', year = get_year_options())
 @app.route("/export")
 def render_third():
 	try:   
-	    us_imp = request.args["year"]
-	    return render_template('exports.html', year = get_year_options(us_imp), response = us_importEngery(us_imp))
+	    us_exp = request.args["year"]
+	    return render_template('exports.html', year = get_year_options(us_exp), response = us_importEngery(us_exp))
 	except:
 		return render_template('exports.html', year = get_year_options())
 
