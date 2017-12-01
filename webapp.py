@@ -18,23 +18,16 @@ def render_usprts2():
 	except:
 		return render_template('facts.html', year = get_year_options())
 
-#@app.route("/UsImprt2")
-#def render_usprts2():
-#	try:   
-#	    us_imp = request.args["year"]
-#	    return render_template('importEnergy.html', year = get_year_options(us_imp), response = us_importEngery(us_imp))
-#	except:
-#		return render_template('importEnergy.html', year = get_year_options())
+return render_template('importEnergy.html', year = get_year_options())
     
 @app.route("/export")
 def render_third():
-    return render_template('exports.html', year = get_year_options())
+	try:   
+	    us_imp = request.args["year"]
+	    return render_template('exports.html', year = get_year_options(us_imp), response = us_importEngery(us_imp))
+	except:
+		return render_template('exports.html', year = get_year_options())
 
-@app.route("/UsExprt2")
-def render_usprts3():
-        us_exp = request.args["year"]
-        print(us_exp)
-        return render_template('exports.html', year = get_year_options(us_exp))
     
 @app.route("/consume")
 def render_four():
