@@ -18,7 +18,7 @@ def render_usprts2():
 	except:
 		return render_template('facts.html', year = get_year_options())
 
-return render_template('importEnergy.html', year = get_year_options())
+	return render_template('importEnergy.html', year = get_year_options())
     
 @app.route("/export")
 def render_third():
