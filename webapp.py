@@ -31,10 +31,10 @@ def render_third():
     
 @app.route("/consume")
 def render_four():
-    	try:   
+        try:   
 	    us_cons = request.args["year"]
 	    return render_template('consume.html', year = get_year_options(us_cons), response = us_importEngery(us_cons))
-	except:
+        except:
 		return render_template('consume.html', year = get_year_options())
 
 
