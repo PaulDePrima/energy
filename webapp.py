@@ -24,7 +24,7 @@ def render_usprts2():
 def render_third():
 	try:   
 	    us_exp = request.args["year"]
-	    return render_template('exports.html', year = get_year_options(us_exp), response = us_importEngery(us_exp))
+	    return render_template('exports.html', year = get_year_options(us_exp), response = us_exportEngery(us_exp))
 	except:
 		return render_template('exports.html', year = get_year_options())
 
@@ -54,6 +54,12 @@ def get_year_options(default = None):
 
 def us_importEngery(year):
        imprts = energy[1949-int(year)]["data"]["imports"]
+       randKey = random.choice(list(imprts.keys()))
+
+       return randKey + ": " + str(imprts[randKey]) + " Quadrillion BTUs"
+
+def us_exportEngery(year):
+       imprts = energy[1949-int(year)]["data"]["exports"]
        randKey = random.choice(list(imprts.keys()))
 
        return randKey + ": " + str(imprts[randKey]) + " Quadrillion BTUs"
