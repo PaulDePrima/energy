@@ -2,7 +2,7 @@
 {% set active_page = 'consume' %}
 {% block title %}Fact Page 3{% endblock %}
 {% block content %}
-  <h3>Fun Facts on Energy Consumtion</h3>
+<h3>Fun Facts on Energy Consumtion</h3>
    <form action="/consume">
     <select name="year">
       {{ year }}
@@ -10,7 +10,7 @@
    <br><br>
    <input type="submit">
    <br><br>
-   <p>{{ response }}</p>
+   <h5>In year, the total amount of type used was</h5><p>{{ response }}</p>
  </form>
   
 {% endblock %}
