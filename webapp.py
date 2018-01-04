@@ -68,7 +68,7 @@ def us_consumeEngery(year):
        imprts = energy[1949-int(year)]["data"]["consumption"]
        randKey = random.choice(list(imprts.keys()))
 
-       return randKey + ": " + str(imprts[randKey]) + " Quadrillion BTUs"
+       return "In year, the total amount of" + randKey +"used was" + str(imprts[randKey]) + " Quadrillion BTUs"
 
     
     
