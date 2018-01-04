@@ -56,19 +56,19 @@ def us_importEngery(year):
        imprts = energy[1949-int(year)]["data"]["imports"]
        randKey = random.choice(list(imprts.keys()))
 
-       return randKey + ": " + str(imprts[randKey]) + " Quadrillion BTUs"
+       return "In "+ year +", the total amount of " + randKey +" imported for energy was " + str(imprts[randKey]) + " Quadrillion BTUs"
 
 def us_exportEngery(year):
        imprts = energy[1949-int(year)]["data"]["exports"]
        randKey = random.choice(list(imprts.keys()))
 
-       return randKey + ": " + str(imprts[randKey]) + " Quadrillion BTUs"
+       return "In "+ year +", the total amount of " + randKey +" exported was " + str(imprts[randKey]) + " Quadrillion BTUs"
 
 def us_consumeEngery(year):
        imprts = energy[1949-int(year)]["data"]["consumption"]
        randKey = random.choice(list(imprts.keys()))
 
-       return "In "+ year +", the total amount of " + randKey +" used for energy was " + str(imprts[randKey]) + " Quadrillion BTUs"
+       return "In "+ year +", the total amount of " + randKey +" consumed for energy was " + str(imprts[randKey]) + " Quadrillion BTUs"
 
     
     
